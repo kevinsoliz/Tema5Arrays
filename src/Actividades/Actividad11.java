@@ -10,7 +10,7 @@ public class Actividad11 {
         posicion = buscar(enteros, 0);
         System.out.println("Buscar : " + posicion);
     }
-    static int buscar(int[] a, int key) {
+    public static int buscar(int[] a, int key) {
         int indice = -1;
         int contador = 0;
         while (contador < a.length) {
