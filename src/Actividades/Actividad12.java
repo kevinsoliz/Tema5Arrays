@@ -1,5 +1,6 @@
 package Actividades;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Actividad12 {
@@ -15,8 +16,8 @@ public class Actividad12 {
     }
     static byte verificarNumAciertos(int[] primitiva, int[] ganadora) {
         byte aciertos = 0;
-        for (int i = 0; i < ganadora.length; i++) {
-            if (Actividad11.buscar(ganadora, primitiva[i]) > 1)
+        for (int num : ganadora) {
+            if (Arrays.binarySearch(primitiva, num) >= 0)
                 aciertos++;
         }
         return aciertos;
