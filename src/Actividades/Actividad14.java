@@ -20,6 +20,8 @@ public class Actividad14 {
                 impares[impares.length - 1] = elemento;
             }
         }
+        Arrays.sort(pares);
+        Arrays.sort(impares);
         System.out.println("Original: " + Arrays.toString(miArry));
         System.out.println(Arrays.toString(pares));
         System.out.println(Arrays.toString(impares));
