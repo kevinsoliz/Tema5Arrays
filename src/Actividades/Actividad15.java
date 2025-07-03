@@ -5,16 +5,14 @@ import java.util.Arrays;
 public class Actividad15 {
     public static void main(String[] args) {
         int[] prueba = { 2, 3, 6, 7, 9};
-        prueba = insercionOrdenada(prueba, 8);
+        prueba = insercionOrdenada(prueba, 25);
         System.out.println(Arrays.toString(prueba));
     }
     public static int[] insercionOrdenada(int[] original, int nuevoElemento){
         int[] copia = new int[original.length + 1];
 
         int indiceInsercion = Arrays.binarySearch(original, nuevoElemento);
-        if(indiceInsercion >= 0)
-            copia = original;
-        else
+        if(indiceInsercion < 0)
             indiceInsercion = -indiceInsercion - 1;
 
         System.arraycopy(original, 0, copia, 0, indiceInsercion);
