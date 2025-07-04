@@ -8,9 +8,10 @@ import java.util.Arrays;
 
 public class Ejercicio2 {
     public static void main(String[] args) {
-        int[] original = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        int[] alea = arrayAleatorios(5);
-        System.out.println(Arrays.toString(alea));
+        int[] original = {11, 22, 33, 44, 55, 66, 77, 88, 99, 100};
+        original = desordenar(original);
+        System.out.println(Arrays.toString(original));
+
 
     }
     static int[] desordenar(int[] original){
