@@ -1,5 +1,6 @@
 package Practica;
 
+import Actividades.Actividad08;
 import Actividades.Actividad11;
 import Actividades.Actividad18;
 
@@ -16,7 +17,7 @@ public class Ejercicio1 {
 
         int[] resultado = new int[0];
 
-        int indice = Arrays.binarySearch(original, clave);
+        int indice = buscar(original, clave);
         int max = 0;
 
         while(indice >= max){
@@ -24,9 +25,20 @@ public class Ejercicio1 {
             resultado[resultado.length - 1] = indice;
 
             max = indice + 1;
-            indice = Arrays.binarySearch(original, clave);
+            indice = buscar(original, clave);
         }
 
         return resultado;
+    }
+
+    public static int buscar(int[] a, int key) {
+        int indice = -1;
+        int contador = a.length - 1;
+        while (contador >= 0) {
+            if (a[contador] == key)
+                indice = contador;
+            contador--;
+        }
+        return indice;
     }
 }
