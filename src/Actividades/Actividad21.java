@@ -7,18 +7,25 @@ public class Actividad21 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int[] combinacionSecreta = combinacionSecreta(4);
+        int[] combinacionUsuario = new int[combinacionSecreta.length];
 
-        for (int j : combinacionSecreta) {
-            int digito = Actividad06.pedirValor("Digito: ", sc);
+        pedirCombinacion(combinacionUsuario, sc);
 
-            while (j != digito) {
-                System.out.println(verificar(j, digito));
-                digito = Actividad06.pedirValor("Digito: ", sc);
+        while(!Arrays.equals(combinacionSecreta, combinacionUsuario)){
+            byte i = 0;
+            for (int elemento : combinacionUsuario) {
+                System.out.println(verificar(combinacionSecreta[i], elemento));
+                i++;
             }
-            System.out.println("Has acertado!");
+            pedirCombinacion(combinacionUsuario, sc);
         }
+        System.out.println("Todo correcto.");
+    }
 
-        System.out.println("Combinación secreta: " + Arrays.toString(combinacionSecreta));
+    private static void pedirCombinacion(int[] combinacionUsuario, Scanner sc) {
+        for (int i = 0; i < combinacionUsuario.length; i++) {
+            combinacionUsuario[i] = Actividad06.pedirValor("Digito: ", sc);
+        }
     }
 
     static int[] combinacionSecreta(int digitos){
@@ -35,6 +42,9 @@ public class Actividad21 {
             mensaje = "Es mayor que " + inputUser;
         else if ( digito < inputUser)
             mensaje = "Es menor que " + inputUser;
+        else 
+            mensaje = "Correcto.";
+
         return mensaje;
     }
 }
