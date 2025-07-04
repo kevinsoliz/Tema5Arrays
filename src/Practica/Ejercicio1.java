@@ -13,15 +13,17 @@ public class Ejercicio1 {
         System.out.println(Arrays.toString(indicesRepetidos));
     }
     static int[] buscarTodos(int[] original, int clave){
-        Arrays.sort(original);
+
         int[] resultado = new int[0];
 
         int indice = Arrays.binarySearch(original, clave);
-        while(indice >= 0){
+        int max = 0;
+
+        while(indice >= max){
             resultado = Arrays.copyOf(resultado, resultado.length + 1);
             resultado[resultado.length - 1] = indice;
 
-            original = Actividad18.borrarOrdenado(original, clave);
+            max = indice + 1;
             indice = Arrays.binarySearch(original, clave);
         }
 
