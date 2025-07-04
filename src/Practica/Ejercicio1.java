@@ -13,32 +13,19 @@ public class Ejercicio1 {
         int[] indicesRepetidos = buscarTodos(enteros, 4);
         System.out.println(Arrays.toString(indicesRepetidos));
     }
-    static int[] buscarTodos(int[] original, int clave){
 
+
+    public static int[] buscarTodos(int[] original, int key) {
         int[] resultado = new int[0];
 
-        int indice = buscar(original, clave);
-        int max = 0;
-
-        while(indice >= max){
-            resultado = Arrays.copyOf(resultado, resultado.length + 1);
-            resultado[resultado.length - 1] = indice;
-
-            max = indice + 1;
-            indice = buscar(original, clave);
+        int contador = 0;
+        while (contador < original.length) {
+            if (original[contador] == key) {
+                resultado = Arrays.copyOf(resultado, resultado.length + 1);
+                resultado[resultado.length - 1] = contador;
+            }
+            contador++;
         }
-
         return resultado;
-    }
-
-    public static int buscar(int[] a, int key) {
-        int indice = -1;
-        int contador = a.length - 1;
-        while (contador >= 0) {
-            if (a[contador] == key)
-                indice = contador;
-            contador--;
-        }
-        return indice;
     }
 }
