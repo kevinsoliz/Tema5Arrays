@@ -13,8 +13,8 @@ public class Ejer1 {
     }
     static void superficieVolumen(double radio){
         double superficie = 4 * Math.PI * Math.pow(radio, 2);
-        double volumen = 4 * Math.PI / 3 * Math.pow(radio, 3);
+        double area = 4 * Math.PI / 3 * Math.pow(radio, 3);
         System.out.println("Superficie: " + superficie
-                            + "\nVolumen: " + volumen);
+                            + "\nVolumen: " + area);
     }
 }
